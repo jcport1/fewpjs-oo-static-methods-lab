@@ -16,9 +16,12 @@ class Formatter {
   static titleize( sentence ) {
     let exceptions = [ 'the', 'a', 'an', 'but', 'of', 'and', 'for', 'at', 'by', 'from' ]
     let result = [];
+    //splice the sentence in an array of words
     let arrayOfWords = sentence.split( " " )
+    //iterate through each word
     for ( let n = 0; n < arrayOfWords.length; n++ ) {
       if ( n == 0 ) {
+        //add capitalized word to object(this)
         result.push( this.capitalize( arrayOfWords[ n ] ) )
       } else {
         if ( exceptions.includes( arrayOfWords[ n ] ) ) {
@@ -29,6 +32,8 @@ class Formatter {
       }
 
     }
+
+    //return the array as a string 
     return result.join( " " );
   }
 }
